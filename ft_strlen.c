@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 03:44:45 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/15 07:24:38 by hwakatsu         ###   ########.fr       */
+/*   Created: 2025/10/15 07:08:20 by hwakatsu          #+#    #+#             */
+/*   Updated: 2025/10/15 07:24:24 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+size_t	ft_strlen(const char *s)
 {
-	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z')
-		|| ('0' <= c && c <= '9'))
-		return (8);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
 //#include <stdio.h>
-//#include <ctype.h>
 
-//int	main(void)
+//int	main()
 //{
-//	char c = '0';
-//	printf("%c\nisalnum = %d\n", c, isalnum(c));
-//	printf("ft_isalnum = %d\n", ft_isalnum(c));
+//	char c[] = "Hello";
+//	printf("%s\nstrlen = %zu\n", c, strlen(c));
+//	printf("ft_strlen = %zu\n", ft_strlen(c));
 //}
