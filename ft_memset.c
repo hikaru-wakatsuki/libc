@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 07:29:15 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/15 22:00:49 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/15 14:46:57 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (ub);
 }
 
-// #include <stdio.h>
+ #include <stdio.h>
 
-// int	main(void)
-// {
-// 	char	b[] = "Hello";
-// 	char	c;
+ int	main(void)
+ {
+ 	char	b[] = "Hello";
+ 	char	c;
 
-// 	c = 'a';
-// 	ft_memset(b, (int)c, 3);
-// 	printf("ft_memset = %s\n", b);
-// }
+ 	c = 'a';
+ 	ft_memset(b, (int)c, 3);
+ 	printf("ft_memset = %s\n", b);
+ }
