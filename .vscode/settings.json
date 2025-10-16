@@ -4,6 +4,8 @@
 		"cstdio": "c",
 		"type_traits": "c",
 		"new": "c",
-		"typeinfo": "c"
+		"typeinfo": "c",
+		"ctype.h": "c",
+		"stdio.h": "c"
 	}
 }
