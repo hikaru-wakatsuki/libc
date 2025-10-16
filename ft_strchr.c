@@ -1,48 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 04:24:10 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/16 21:26:12 by hwakatsu         ###   ########.fr       */
+/*   Created: 2025/10/16 20:42:39 by hwakatsu          #+#    #+#             */
+/*   Updated: 2025/10/16 21:10:49 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	char	*dest2;
-	char	*src2;
-
-	dest2 = (char *)dest;
-	src2 = (char *)src;
-	i = ft_strlen(src2);
-	if (i > len)
-		i = len;
-	if (dest <= src)
+	while (*(s++))
 	{
-		while (i > 0)
-		{
-			dest2[i] = src2[i];
-			i--;
-		}
+		if (*s == (const char)c)
+			return ((char *)s);
 	}
-	else
-		ft_memcpy(dest, src, len);
-	return (dest);
+	return (NULL);
 }
 
 // #include <stdio.h>
 
-// int	main(void)
+// int	main()
 // {
-// 	char src[] = "Hello";
-// 	char dest[] = "12345";
+// 	const char s[] = "Hello";
+// 	char c = 'l';
 
-// 	ft_memmove(dest, src, 3);
-// 	printf("%s", dest);
+// 	printf("%s", ft_strchr(s, (int)c));
 // }
