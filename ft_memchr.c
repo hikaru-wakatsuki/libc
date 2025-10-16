@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 22:00:13 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/16 22:02:49 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/16 22:05:11 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	*memchr(const void *s, int c, size_t n)
 {
-
+	
 }

@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 06:41:50 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/16 18:18:08 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/16 22:12:24 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 }
 
 // #include <stdio.h>
+// #include <bsd/string.h>
 
 // int	main(void)
 // {
@@ -39,5 +40,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 // 	char	src[] = "12345";
 
 // 	printf("%ld\n", ft_strlcpy(dest, src, 5));
+// 	printf("%ld\n", strlcpy(dest, src, 5));
 // 	printf("%s\n", dest);
 // }
