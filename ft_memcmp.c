@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 06:49:15 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 17:09:26 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/17 18:08:21 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 			return (uc1[i] - uc2[i]);
 		i++;
 	}
-	return (uc1[i] - uc2[i]);
+	return ((int)(uc1[i] - uc2[i]));
 }
 
 //#include <stdio.h>

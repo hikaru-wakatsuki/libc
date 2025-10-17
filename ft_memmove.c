@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 04:24:10 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 17:17:54 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/17 20:38:39 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,18 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	}
 	else
 		ft_memcpy(dest, src, len);
-	return (dest);
+	return ((void *)dest);
 }
 
 //  #include <stdio.h>
 
-//  int	main(void)
-//  {
-//  	char dest[] = "12345";
+// int	main(void)
+// {
+// 	char dest[] = "12345";
 // 	char dest2[] = "12345";
 
-
-//  	ft_memmove(dest, dest + 2, 3);
+// 	ft_memmove(dest, dest + 2, 3);
 // 	memmove(dest2, dest2 + 2, 3);
-
-//  	printf("%s\n", dest);
-//  	printf("%s\n", dest2);
-
-//  }
+// 	printf("%s\n", dest);
+// 	printf("%s\n", dest2);
+// }

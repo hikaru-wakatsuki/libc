@@ -20,7 +20,9 @@ SRCS =	ft_isalpha.c \
 		ft_strchr.c \
 		ft_strrchr.c \
 		ft_strncmp \
-
+		ft_memchr \
+		ft_memcmp \
+		ft_strnstr \
 
 
 

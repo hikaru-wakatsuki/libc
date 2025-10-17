@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 21:16:29 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 18:07:37 by hwakatsu         ###   ########.fr       */
+/*   Created: 2025/10/17 18:01:42 by hwakatsu          #+#    #+#             */
+/*   Updated: 2025/10/17 20:38:53 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t			i;
-	unsigned char	*dest2;
-	unsigned char	*src2;
+	size_t	i;
+	size_t	little_len;
 
-	dest2 = (unsigned char *)dest;
-	src2 = (unsigned char *)src;
+	little_len = ft_strlen(little);
 	i = 0;
-	while (i < n)
+	if (little_len == 0)
+		return ((char *)big);
+	while (*big && (i++) < len)
 	{
-		dest2[i] = src2[i];
-		i++;
+		if (*big == *little)
+			if (ft_strncmp(big, little, little_len) == 0)
+				return ((char *)big);
+		big++;
 	}
-	return ((void *)dest);
+	return (NULL);
 }
 
 // #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char src[] = "Hello";
-// 	char dest[] = "12345";
-// 	char src2[] = "Hello";
-// 	char dest2[] = "12345";
-
-// 	ft_memcpy(dest, src, 3);
-// 	printf("ft_memcpy = %s\n", dest);
-// 	ft_memcpy(dest2, src2, 3);
-// 	printf("ft_memcpy = %s\n", dest2);
+// 	char	str[] = "ABCDE";
+// 	char	to_find[] = "CD";
+// 	int i = 5;
+// 	printf("%s\n", ft_strnstr(str, to_find, i));
 // }
