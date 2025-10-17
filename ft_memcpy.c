@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:16:29 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 07:51:00 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/17 17:20:31 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*dest2;
 	unsigned char	*src2;
 
@@ -35,7 +35,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 // {
 // 	char src[] = "Hello";
 // 	char dest[] = "12345";
+// 	char src2[] = "Hello";
+// 	char dest2[] = "12345";
 
 // 	ft_memcpy(dest, src, 3);
-// 	printf("%s\n", dest);
+// 	printf("ft_memcpy = %s\n", dest);
+// 	ft_memcpy(dest2, src2, 3);
+// 	printf("ft_memcpy = %s\n", dest2);
 // }

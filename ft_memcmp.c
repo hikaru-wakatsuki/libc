@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 06:49:15 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 07:29:06 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/17 17:09:26 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*uc1;
 	unsigned char	*uc2;
-	size_t i ;
+	size_t			i;
 
 	uc1 = (unsigned char *)s1;
 	uc2 = (unsigned char *)s2;
@@ -32,7 +32,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 //#include <stdio.h>
 
-//int	main(void)
+// int	main(void)
 //{
 //	char	s1[] = "abcd";
 //	char	s2[] = "abce";

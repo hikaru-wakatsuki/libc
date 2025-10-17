@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 04:24:10 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 07:59:39 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/17 17:17:54 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 
 	dest2 = (unsigned char *)dest;
 	src2 = (unsigned char *)src;
-	if (dest <= src)
+	if (dest >= src)
 	{
-		len--;
 		while (len > 0)
 		{
-			dest2[len] = src2[len];
 			len--;
+			dest2[len] = src2[len];
 		}
 	}
 	else
@@ -33,12 +32,18 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	return (dest);
 }
 
- #include <stdio.h>
+//  #include <stdio.h>
 
- int	main(void)
- {
- 	char dest[] = "12345";
+//  int	main(void)
+//  {
+//  	char dest[] = "12345";
+// 	char dest2[] = "12345";
 
- 	ft_memmove(dest, dest + 2, 3);
- 	printf("%s\n", dest);
- }
+
+//  	ft_memmove(dest, dest + 2, 3);
+// 	memmove(dest2, dest2 + 2, 3);
+
+//  	printf("%s\n", dest);
+//  	printf("%s\n", dest2);
+
+//  }
