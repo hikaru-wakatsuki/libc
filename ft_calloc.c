@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 22:10:36 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 22:53:47 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/17 23:17:42 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,30 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	cal = malloc(nmemb * size);
 	return (cal);
 }
+
+// #include <stdio.h>
+
+// int	main()
+// {
+// 	size_t	nmemb = INT_MAX;
+// 	size_t	size = sizeof(char);
+// 	size_t	i = 0;
+// 	char *str;
+
+// 	str = (char *)ft_calloc(nmemb, size);
+// 	if (!nmemb || !size)
+// 	{
+// 		free(str);
+// 		return (1);
+// 	}
+// 	if (!str)
+// 		return (1);
+// 	str[nmemb - 1] = '\0';
+// 	while (i + 1 < nmemb)
+// 	{
+// 		str[(i++)] = 'a';
+// 	}
+// 	printf("%s", str);
+// 	free(str);
+// 	return (0);
+// }
