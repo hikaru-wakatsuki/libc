@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 04:24:10 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 07:52:40 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/17 07:59:39 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 
  int	main(void)
  {
- 	//char src[] = "Hello";
  	char dest[] = "12345";
 
  	ft_memmove(dest, dest + 2, 3);
