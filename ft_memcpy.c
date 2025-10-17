@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:16:29 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/16 21:26:08 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/17 07:51:00 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
-	size_t	src_len;
-	char	*dest2;
-	char	*src2;
+	unsigned char	*dest2;
+	unsigned char	*src2;
 
-	dest2 = (char *)dest;
-	src2 = (char *)src;
-	src_len = ft_strlen(src2);
+	dest2 = (unsigned char *)dest;
+	src2 = (unsigned char *)src;
 	i = 0;
-	while (i < src_len && i < n)
+	while (i < n)
 	{
 		dest2[i] = src2[i];
 		i++;

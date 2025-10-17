@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 04:24:10 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/16 21:26:12 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/17 07:52:40 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,18 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	size_t	i;
-	char	*dest2;
-	char	*src2;
+	unsigned char	*dest2;
+	unsigned char	*src2;
 
-	dest2 = (char *)dest;
-	src2 = (char *)src;
-	i = ft_strlen(src2);
-	if (i > len)
-		i = len;
+	dest2 = (unsigned char *)dest;
+	src2 = (unsigned char *)src;
 	if (dest <= src)
 	{
-		while (i > 0)
+		len--;
+		while (len > 0)
 		{
-			dest2[i] = src2[i];
-			i--;
+			dest2[len] = src2[len];
+			len--;
 		}
 	}
 	else
@@ -36,13 +33,13 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	return (dest);
 }
 
-// #include <stdio.h>
+ #include <stdio.h>
 
-// int	main(void)
-// {
-// 	char src[] = "Hello";
-// 	char dest[] = "12345";
+ int	main(void)
+ {
+ 	//char src[] = "Hello";
+ 	char dest[] = "12345";
 
-// 	ft_memmove(dest, src, 3);
-// 	printf("%s", dest);
-// }
+ 	ft_memmove(dest, dest + 2, 3);
+ 	printf("%s\n", dest);
+ }

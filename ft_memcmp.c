@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 22:00:13 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 07:45:40 by hwakatsu         ###   ########.fr       */
+/*   Created: 2025/10/17 06:49:15 by hwakatsu          #+#    #+#             */
+/*   Updated: 2025/10/17 07:29:06 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*str;
-	unsigned char	uc;
-	size_t	i;
+	unsigned char	*uc1;
+	unsigned char	*uc2;
+	size_t i ;
 
-	str = (unsigned char *)s;
-	uc = (unsigned char)c;
+	uc1 = (unsigned char *)s1;
+	uc2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n)
+	while (i + 1 < n)
 	{
-		if (*str == uc)
-			return (str);
-		str++;
+		if (uc1[i] != uc2[i])
+			return (uc1[i] - uc2[i]);
 		i++;
 	}
-	return (NULL);
+	return (uc1[i] - uc2[i]);
 }
 
-#include <stdio.h>
+//#include <stdio.h>
 
- int	main(void)
- {
- 	char s[] = "Hello\0";
- 	char c = 'l';
+//int	main(void)
+//{
+//	char	s1[] = "abcd";
+//	char	s2[] = "abce";
 
- 	printf("%s\n", (char *)ft_memchr(s, (int)c, 2));
- }
+//	printf("%d\n", ft_memcmp(s1, s2, 4));
+// 	printf("%d\n", memcmp(s1, s2, 4));
+// 	return (0);
+//}
