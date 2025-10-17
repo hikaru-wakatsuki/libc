@@ -23,6 +23,7 @@ SRCS =	ft_isalpha.c \
 		ft_memchr \
 		ft_memcmp \
 		ft_strnstr \
+		ft_atoi \
 
 
 
