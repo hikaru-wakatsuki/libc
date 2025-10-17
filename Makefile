@@ -24,7 +24,8 @@ SRCS =	ft_isalpha.c \
 		ft_memcmp \
 		ft_strnstr \
 		ft_atoi \
-
+		ft_calloc \
+		ft_strdup \
 
 
 
