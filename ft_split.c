@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:14:31 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/18 22:51:08 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/18 22:53:44 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_strndup(const char *s, size_t n)
 	return (dup);
 }
 
-void	free_all(split)
+// void	free_all(split)
 
 char	**ft_split(char const *s, char c)
 {
