@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 03:42:20 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/18 16:52:28 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/18 17:51:24 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <limits.h>
+# include <stdbool.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
