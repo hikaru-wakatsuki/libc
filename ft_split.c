@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:14:31 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/18 22:53:44 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/18 16:21:39 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strndup(const char *s, size_t n)
 	char	*dup;
 
 	s_len = ft_strlen(s);
-	if (n < s_len)
+	if (n > s_len)
 		n = s_len;
 	dup = (char *)malloc(sizeof(char) * (n + 1));
 	if (!dup)
@@ -58,22 +58,35 @@ char	*ft_strndup(const char *s, size_t n)
 	return (dup);
 }
 
-// void	free_all(split)
+void	free_all(char **to_split, size_t to_index)
+{
+	while (to_index > 0)
+		free (to_split[(to_index--)]);
+	free (to_split);
+}
 
 char	**ft_split(char const *s, char c)
 {
 	char	**to_split;
 	size_t	n;
+	size_t	to_index;
 
 	to_split = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!to_split)
 		return (NULL);
 	n = 0;
+	to_index = 0;
 	while (*s)
 	{
 		if (*s == c && n != 0)
 		{
-			*(to_split++) = ft_strndup(s, n);
+			to_split[(to_index++)] = ft_strndup(s - n, n);
+			printf("n = %d\n", n);
+			if (!(to_split[to_index - 1]))
+			{
+				free_all(to_split, to_index - 1);
+				return (NULL);
+			}
 			n = 0;
 		}
 		else if (*s != c)
@@ -82,6 +95,12 @@ char	**ft_split(char const *s, char c)
 	}
 	if (n != 0)
 		*(to_split++) = ft_strndup(s, n);
+	if (!(to_split[to_index - 1]))
+	{
+		free_all(to_split, to_index);
+		return (NULL);
+	}
+	to_split[to_index] = NULL;
 	return (to_split);
 }
 
