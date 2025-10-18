@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:14:31 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/18 16:21:39 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/18 17:40:17 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	free_all(char **to_split, size_t to_index)
 {
 	while (to_index > 0)
 		free (to_split[(to_index--)]);
+	free (to_split[(to_index)]);
 	free (to_split);
 }
 
@@ -81,7 +82,6 @@ char	**ft_split(char const *s, char c)
 		if (*s == c && n != 0)
 		{
 			to_split[(to_index++)] = ft_strndup(s - n, n);
-			printf("n = %d\n", n);
 			if (!(to_split[to_index - 1]))
 			{
 				free_all(to_split, to_index - 1);
@@ -94,30 +94,30 @@ char	**ft_split(char const *s, char c)
 		s++;
 	}
 	if (n != 0)
-		*(to_split++) = ft_strndup(s, n);
+		to_split[(to_index++)] = ft_strndup(s - n, n);
 	if (!(to_split[to_index - 1]))
 	{
-		free_all(to_split, to_index);
+		free_all(to_split, to_index - 1);
 		return (NULL);
 	}
 	to_split[to_index] = NULL;
 	return (to_split);
 }
 
-#include <stdio.h>
+//#include <stdio.h>
 
-int	main(void)
-{
-	char	*str;
-	char	charset;
-	char	**box;
-	int		i;
+//int	main(void)
+//{
+//	char	*str;
+//	char	charset;
+//	char	**box;
+//	int		i;
 
-	str = " Hello!! My Name is Pika!! ";
-	charset = ' ';
-	i = 0;
-	box = ft_split(str, charset);
-	while (box[i])
-		printf("%s\n", box[(i++)]);
-	free(box);
-}
+//	str = " Hello!! My Name is Pika!!";
+//	charset = ' ';
+//	i = 0;
+//	box = ft_split(str, charset);
+//	while (box[i])
+//		printf("%s\n", box[(i++)]);
+//	free_all(box, i);
+//}
