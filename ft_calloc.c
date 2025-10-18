@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 22:10:36 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 23:17:42 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/18 15:34:39 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (nmemb >= INT_MAX / size)
 		return (NULL);
 	cal = malloc(nmemb * size);
+	if (!cal)
+		return (NULL);
+	ft_bzero(cal, nmemb * size);
 	return (cal);
 }
 
@@ -28,7 +31,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 // int	main()
 // {
-// 	size_t	nmemb = INT_MAX;
+// 	size_t	nmemb = 5;
 // 	size_t	size = sizeof(char);
 // 	size_t	i = 0;
 // 	char *str;
