@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:14:31 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/18 17:40:17 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/19 01:20:23 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,18 @@ char	*ft_strndup(const char *s, size_t n)
 	return (dup);
 }
 
-void	free_all(char **to_split, size_t to_index)
+bool	insert_word(char const *s, char **to_split, size_t to_index, size_t	n)
 {
-	while (to_index > 0)
-		free (to_split[(to_index--)]);
-	free (to_split[(to_index)]);
-	free (to_split);
+	to_split[to_index] = ft_strndup(s - n, n);
+	if (!(to_split[to_index]))
+	{
+		while (to_index > 0)
+			free (to_split[(to_index--)]);
+		free (to_split[(to_index)]);
+		free (to_split);
+		return (false);
+	}
+	return (true);
 }
 
 char	**ft_split(char const *s, char c)
@@ -81,25 +87,16 @@ char	**ft_split(char const *s, char c)
 	{
 		if (*s == c && n != 0)
 		{
-			to_split[(to_index++)] = ft_strndup(s - n, n);
-			if (!(to_split[to_index - 1]))
-			{
-				free_all(to_split, to_index - 1);
+			if (!(insert_word(s, to_split, (to_index++), n)))
 				return (NULL);
-			}
 			n = 0;
 		}
-		else if (*s != c)
+		else if (*(s++) != c)
 			n++;
-		s++;
 	}
 	if (n != 0)
-		to_split[(to_index++)] = ft_strndup(s - n, n);
-	if (!(to_split[to_index - 1]))
-	{
-		free_all(to_split, to_index - 1);
-		return (NULL);
-	}
+		if (!(insert_word(s, to_split, (to_index++), n)))
+			return (NULL);
 	to_split[to_index] = NULL;
 	return (to_split);
 }
@@ -110,14 +107,17 @@ char	**ft_split(char const *s, char c)
 //{
 //	char	*str;
 //	char	charset;
-//	char	**box;
+//	char	**board;
 //	int		i;
 
-//	str = " Hello!! My Name is Pika!!";
+//	str = " Hello!! My Name is Pika!! ";
 //	charset = ' ';
 //	i = 0;
-//	box = ft_split(str, charset);
-//	while (box[i])
-//		printf("%s\n", box[(i++)]);
-//	free_all(box, i);
+//	board = ft_split(str, charset);
+//	while (board[i])
+//		printf("%s\n", board[(i++)]);
+//	while (i > 0)
+//		free (board[(i--)]);
+//	free (board[(i)]);
+//	free (board);
 //}
