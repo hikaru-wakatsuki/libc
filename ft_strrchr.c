@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:11:34 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/19 14:04:09 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/19 15:39:36 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,14 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 
 	i = ft_strlen(s);
-	s += i;
-	if (*s == (const char)c)
-		return ((char *)s);
-	s--;
-	while (*s)
+	while (i > 0)
 	{
-		if (*s == (const char)c)
-			return ((char *)s);
-		s--;
+		if (s[i] == (const char)c)
+			return ((char *)(s + i));
+		i--;
 	}
+	if (s[i] == (const char)c)
+		return ((char *)(s + i));
 	return (NULL);
 }
 
