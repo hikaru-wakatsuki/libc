@@ -28,7 +28,8 @@ SRCS =	ft_isalpha.c \
 		ft_strdup.c \
 		ft_substr \
 		ft_strjoin \
-
+		ft_strtrim \
+		ft_split \
 
 
 OBJS = $(SRCS:.c=.o)
