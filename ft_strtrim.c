@@ -6,13 +6,13 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:14:40 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/19 13:27:08 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/19 16:09:14 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	char_set(char const to_find, char const *set)
+static bool	char_set(char const to_find, char const *set)
 {
 	while (*set)
 	{
@@ -23,7 +23,7 @@ bool	char_set(char const to_find, char const *set)
 	return (false);
 }
 
-size_t	count_sets(char const *s1, char const *set)
+static size_t	count_sets(char const *s1, char const *set)
 {
 	size_t	count;
 

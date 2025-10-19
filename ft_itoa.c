@@ -6,13 +6,13 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 01:23:03 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/19 13:21:49 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/19 16:10:07 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	n_count(long nb)
+static long	n_count(long nb)
 {
 	long	sign;
 	long	count;

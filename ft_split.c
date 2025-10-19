@@ -6,13 +6,13 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:14:31 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/19 01:20:23 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/19 16:09:46 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_words(char const *s, char const c)
+static size_t	count_words(char const *s, char const c)
 {
 	size_t	count;
 	size_t	n;
@@ -35,7 +35,7 @@ size_t	count_words(char const *s, char const c)
 	return (count);
 }
 
-char	*ft_strndup(const char *s, size_t n)
+static char	*ft_strndup(const char *s, size_t n)
 {
 	size_t	s_len;
 	size_t	i;
@@ -58,15 +58,16 @@ char	*ft_strndup(const char *s, size_t n)
 	return (dup);
 }
 
-bool	insert_word(char const *s, char **to_split, size_t to_index, size_t	n)
+static bool	insert_word(char const *s, char **to_split, size_t to_index,
+		size_t n)
 {
 	to_split[to_index] = ft_strndup(s - n, n);
 	if (!(to_split[to_index]))
 	{
 		while (to_index > 0)
-			free (to_split[(to_index--)]);
-		free (to_split[(to_index)]);
-		free (to_split);
+			free(to_split[(to_index--)]);
+		free(to_split[(to_index)]);
+		free(to_split);
 		return (false);
 	}
 	return (true);
@@ -103,7 +104,7 @@ char	**ft_split(char const *s, char c)
 
 //#include <stdio.h>
 
-//int	main(void)
+// int	main(void)
 //{
 //	char	*str;
 //	char	charset;
