@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:14:40 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/18 21:49:20 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/19 13:27:08 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	s1_len = ft_strlen(s1);
 	set_len = ft_strlen(set);
-	trim_len = s1_len - count_words(s1, set);
+	trim_len = s1_len - count_sets(s1, set);
 	trim = (char *)malloc(sizeof(char) * (trim_len + 1));
 	if (!trim)
 		return (NULL);

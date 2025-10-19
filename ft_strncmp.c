@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 21:28:58 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/16 21:57:32 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/19 14:14:52 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (n == 0)
+		return (0);
 	while (i + 1 < n && s1[i])
 	{
 		if (s1[i] != s2[i])

@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 18:20:51 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/16 21:26:58 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/19 14:13:27 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (dest_len + src_len);
 	}
 	else
-		return (dest_len + size);
+		return (size + src_len);
 }
 
 // #include <stdio.h>
