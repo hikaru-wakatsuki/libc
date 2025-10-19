@@ -6,13 +6,13 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:14:40 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/19 16:09:14 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/19 22:44:20 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static bool	char_set(char const to_find, char const *set)
+static bool	is_set(char const to_find, char const *set)
 {
 	while (*set)
 	{
@@ -23,52 +23,41 @@ static bool	char_set(char const to_find, char const *set)
 	return (false);
 }
 
-static size_t	count_sets(char const *s1, char const *set)
-{
-	size_t	count;
-
-	count = 0;
-	while (*s1)
-	{
-		if (char_set(*s1, set))
-			count++;
-		s1++;
-	}
-	return (count);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
-	size_t	s1_len;
-	size_t	set_len;
+	size_t	start;
+	size_t	end;
 	size_t	trim_len;
 
-	s1_len = ft_strlen(s1);
-	set_len = ft_strlen(set);
-	trim_len = s1_len - count_sets(s1, set);
+	start = 0;
+	while (is_set(s1[start], set) && s1[start])
+		start++;
+	end = ft_strlen(s1);
+	while (is_set(s1[end - 1], set) && end > start)
+		end--;
+	trim_len = end - start;
 	trim = (char *)malloc(sizeof(char) * (trim_len + 1));
 	if (!trim)
 		return (NULL);
 	trim[trim_len] = '\0';
-	while (*s1)
+	while ((trim_len--) > 0)
 	{
-		if (!char_set(*s1, set))
-			*(trim++) = *s1;
-		s1++;
+		trim[trim_len] = s1[end - 1];
+		end--;
 	}
-	return (trim - trim_len);
+	return (trim);
 }
 
 // #include <stdio.h>
 
-// int	main(int argc, char *argv[])
+// int	main()
 // {
-// 	char	sep[3] = "12";
-// 	char	*strcat;
+// 	char	sep[] = "1";
+// 	char	s1[] = "11122122111";
+// 	char	*trim;
 
-// 	strcat = ft_strtrim(argv[1], sep);
-// 	argc = 0;
-// 	printf("%s\n", strcat);
+// 	trim = ft_strtrim(s1, sep);
+// 	printf("%s\n", trim);
 // 	return (0);
 // }
