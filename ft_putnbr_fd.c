@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 22:45:32 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/20 01:41:13 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/20 02:01:38 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd((nb % 10) + '0', fd);
 }
 
- int	main()
- {
- 	ft_putnbr_fd(INT_MIN, 1);
-	ft_putchar_fd('\n', 1);
- 	ft_putnbr_fd(INT_MAX, 1);
-	ft_putchar_fd('\n', 1);
- 	ft_putnbr_fd(0, 1);
-	ft_putchar_fd('\n', 1);
- 	return (0);
- }
+// int	main()
+// {
+// 	ft_putnbr_fd(INT_MIN, 1);
+//	ft_putchar_fd('\n', 1);
+// 	ft_putnbr_fd(INT_MAX, 1);
+//	ft_putchar_fd('\n', 1);
+// 	ft_putnbr_fd(0, 1);
+//	ft_putchar_fd('\n', 1);
+// 	return (0);
+// }
