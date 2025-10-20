@@ -1,41 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 18:44:00 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/20 19:41:58 by hwakatsu         ###   ########.fr       */
+/*   Created: 2025/10/20 20:25:36 by hwakatsu          #+#    #+#             */
+/*   Updated: 2025/10/20 20:27:13 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!*lst)
-		*lst = new;
-	else
-	{
-		new->next = *lst;
-		*lst = new;
-	}
+
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char	str[] = "Hello";
-// 	char	str2[] = "Hello2";
-// 	t_list	**lst;
-// 	t_list	*new;
-// 	t_list	*new2;
-
-// 	new = ft_lstnew(str);
-// 	new2 = ft_lstnew(str2);
-// 	lst = &new2;
-// 	ft_lstadd_front(lst, new);
-// 	printf("%s", (char *)lst[0]->content);
-// }

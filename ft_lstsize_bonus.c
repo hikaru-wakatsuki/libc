@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 18:44:00 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/20 19:41:58 by hwakatsu         ###   ########.fr       */
+/*   Created: 2025/10/20 19:43:14 by hwakatsu          #+#    #+#             */
+/*   Updated: 2025/10/20 20:19:00 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	if (!*lst)
-		*lst = new;
-	else
+	int	i;
+
+	i = 1;
+	if (!lst)
+		return (0);
+	while (lst->next)
 	{
-		new->next = *lst;
-		*lst = new;
+		lst = lst->next;
+		i++;
 	}
+	return (i);
 }
 
 // #include <stdio.h>
 
-// int main()
+// int	main()
 // {
-// 	char	str[] = "Hello";
-// 	char	str2[] = "Hello2";
-// 	t_list	**lst;
-// 	t_list	*new;
-// 	t_list	*new2;
+// 	t_list	*l;
 
-// 	new = ft_lstnew(str);
-// 	new2 = ft_lstnew(str2);
-// 	lst = &new2;
-// 	ft_lstadd_front(lst, new);
-// 	printf("%s", (char *)lst[0]->content);
+//     l = ft_lstnew(strdup("1"));
+//     l->next = ft_lstnew(strdup("2"));
+//     l->next->next = ft_lstnew(strdup("3"));
+// 	printf("%d", ft_lstsize(l));
 // }
