@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 22:12:12 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/20 16:32:19 by hwakatsu         ###   ########.fr       */
+/*   Created: 2025/10/20 15:33:19 by hwakatsu          #+#    #+#             */
+/*   Updated: 2025/10/20 16:33:40 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
-	return ;
+	ft_lstdelone(lst, del);
 }
 
-// void	del_content(void *c)
-// {
-//	free(c);
-// }
+void	del_content(void *c)
+{
+	free(c);
+}
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int	main()
-// {
-// 	t_list	*l;
+int	main()
+{
+	t_list	*l;
 
-// 	l = ft_lstnew(strdup("1"));
-// 	ft_lstdelone(l, del_content);
-// 	printf("%s\n", (char *)(l->content));
-// }
+	l = ft_lstnew(strdup("1"));
+	ft_lstdelone(l, del_content);
+	printf("%s\n", (char *)(l->content));
+}
