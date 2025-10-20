@@ -2,6 +2,7 @@ NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+INCDIR = .
 
 SRCS =	ft_isalpha.c \
 		ft_isdigit.c \
@@ -38,34 +39,34 @@ SRCS =	ft_isalpha.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
-SRCS2 =	ft_lstnew.c \
+B_SRCS =	ft_lstnew.c \
 
 
 OBJS = $(SRCS:.c=.o)
 
-OBJS2 = $(SRCS2:.c=.o)
-		$(SRCS:.c=.o)
+B_OBJS = $(B_SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+bonus:	$(OBJS) $(B_OBJS)
+	ar rcs $(NAME) $(OBJS) $(OBJS2)
+	ranlib $(NAME)
 
-bonus:	$(OBJS2)
-	ar rcs $(NAME) $(OBJS2)
+%.o: %.c
+	$(CC) $(CFLAGS) -I $(INCDIR) -c $< -o $@
 
 clean:
-	rm -f $(OBJS2)
+	rm -f $(OBJS) $(B_OBJS)
 
 fclean:
 	$(MAKE) clean
 	rm -f $(NAME)
 
 re:
-	fclean all
+	$(MAKE) fclean all
 
 .PHONY:
-	all clean fclean re
+	all bonus clean fclean re
