@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 18:44:00 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/20 21:11:28 by hwakatsu         ###   ########.fr       */
+/*   Created: 2025/10/20 22:12:12 by hwakatsu          #+#    #+#             */
+/*   Updated: 2025/10/20 22:46:25 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!*lst)
-		*lst = new;
-	else
-	{
-		new->next = *lst;
-		*lst = new;
-	}
+	// if (!lst || !del)
+	// 	return ;
+	del(lst->content);
+	free(lst);
+	return ;
 }
+
+// void	del_content(void *c)
+// {
+// 	c = NULL;
+// }
 
 // #include <stdio.h>
 
-// int main()
+// int	main()
 // {
-// 	char	str[] = "Hello";
-// 	char	str2[] = "Hello2";
-// 	t_list	**lst;
-// 	t_list	*new;
-// 	t_list	*new2;
+// 	t_list	*l;
 
-// 	new = ft_lstnew(str);
-// 	new2 = ft_lstnew(str2);
-// 	lst = &new2;
-// 	ft_lstadd_front(lst, new);
-// 	printf("%s", (char *)lst[0]->content);
+// 	l = ft_lstnew(strdup("1"));
+// 	l->next = ft_lstnew(strdup("2"));
+// 	ft_lstdelone(l, del_content(l->content));
+// 	printf("%s\n", (char *)(l->content));
 // }
