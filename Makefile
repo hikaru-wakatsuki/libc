@@ -37,9 +37,9 @@ SRCS =	ft_isalpha.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c \
 
-B_SRCS =	ft_lstnew.c \
+B_SRCS =	ft_lstnew_bonus.c \
 
 
 OBJS = $(SRCS:.c=.o)
@@ -52,7 +52,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 bonus:	$(OBJS) $(B_OBJS)
-	ar rcs $(NAME) $(OBJS) $(OBJS2)
+	ar rcs $(NAME) $(OBJS) $(B_OBJS)
 	ranlib $(NAME)
 
 %.o: %.c

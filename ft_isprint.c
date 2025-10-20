@@ -6,11 +6,9 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 06:49:21 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/15 14:54:35 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:45:51 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

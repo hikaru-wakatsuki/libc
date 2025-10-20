@@ -6,11 +6,9 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 06:39:14 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/15 14:52:31 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:45:40 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isascii(int c)
 {

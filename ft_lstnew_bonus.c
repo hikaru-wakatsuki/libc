@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 01:50:59 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/20 17:39:37 by hwakatsu         ###   ########.fr       */
+/*   Created: 2025/10/20 18:44:06 by hwakatsu          #+#    #+#             */
+/*   Updated: 2025/10/20 18:44:13 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,20 @@ t_list	*ft_lstnew(void *content)
 	t_list	*lst;
 
 	lst = (t_list *)malloc(sizeof(t_list) * 1);
+	if (!lst)
+		return (NULL);
 	lst->content = content;
 	lst->next = NULL;
 	return (lst);
 }
+
+// #include <stdio.h>
+
+// int main()
+// {
+// 	char	str[] = "Hello";
+// 	t_list	*lst;
+
+// 	lst = ft_lstnew(str);
+// 	printf("%s", (char *)lst->content);
+// }

@@ -6,11 +6,9 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 20:43:29 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 22:06:35 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:45:10 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

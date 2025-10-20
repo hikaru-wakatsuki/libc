@@ -6,11 +6,9 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 03:44:34 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/15 14:51:54 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:45:47 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {
