@@ -6,13 +6,13 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:33:19 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/20 16:33:40 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/20 17:44:38 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	ft_lstdelone(lst, del);
 }
@@ -24,7 +24,7 @@ void	del_content(void *c)
 
 #include <stdio.h>
 
-int	main()
+int	main(void)
 {
 	t_list	*l;
 
