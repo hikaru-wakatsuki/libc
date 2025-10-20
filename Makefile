@@ -36,9 +36,15 @@ SRCS =	ft_isalpha.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c \
+		ft_putnbr_fd.c
+
+SRCS2 =	ft_lstnew.c \
+
 
 OBJS = $(SRCS:.c=.o)
+
+OBJS2 = $(SRCS2:.c=.o)
+		$(SRCS:.c=.o)
 
 all: $(NAME)
 
@@ -48,8 +54,11 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+bonus:	$(OBJS2)
+	ar rcs $(NAME) $(OBJS2)
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS2)
 
 fclean:
 	$(MAKE) clean
