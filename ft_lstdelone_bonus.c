@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 22:12:12 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/20 16:32:19 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/21 11:57:15 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		return ;
 	del(lst->content);
 	free(lst);
-	return ;
 }
 
 // void	del_content(void *c)

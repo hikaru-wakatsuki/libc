@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:33:19 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/20 17:55:09 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/21 12:09:45 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,31 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	ft_lstdelone(lst, del);
+	t_list	*tmp;
+
+	if (!lst || !del)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
+	}
 }
 
-void	del_content(void *c)
-{
-	free(c);
-}
+// void	del_content(void *c)
+//{
+//	free(c);
+// }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	t_list	*l;
+// int	main(void)
+//{
+//	t_list	*l;
 
-	l = ft_lstnew(strdup("1"));
-	ft_lstdelone(l, del_content);
-	printf("%s\n", (char *)(l->content));
-}
+//	l = ft_lstnew(strdup("1"));
+//	l->next = ft_lstnew(strdup("2"));
+//	ft_lstclear(&l, del_content);
+//	printf("%s\n", (char *)(l->content));
+//}
