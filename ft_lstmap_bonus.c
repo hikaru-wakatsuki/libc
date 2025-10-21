@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 12:37:39 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/21 13:53:27 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/21 15:59:14 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,54 +37,41 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (newlst);
 }
 
-// void	*f_uppercase(void *content)
+//void	*f_uppercase(void *content)
 //{
 //	char	*str;
 //	char	*new_str;
+//	int		i;
 
 //	str = (char *)content;
 //	new_str = strdup(str);
 //	if (!new_str)
 //		return (NULL);
-//	for (int i = 0; new_str[i]; i++)
+//	i = 0;
+//	while (new_str[i])
+//	{
 //		if (new_str[i] >= 'a' && new_str[i] <= 'z')
 //			new_str[i] -= 32;
+//		i++;
+//	}
 //	return (new_str);
 //}
 
-// void	del_str(void *content)
+//void	del_str(void *content)
 //{
 //	free(content);
-// }
+//}
 
-// #include <stdio.h>
+//#include <stdio.h>
 
-// int	main(void)
+//int	main()
 //{
-//	t_list	*list;
-//	t_list	*new_list;
-//	t_list	*tmp;
+//	t_list	*lst;
+//	t_list	*new_lst;
 
-//	list = NULL;
-//	ft_lstadd_back(&list, ft_lstnew(strdup("hello")));
-//	ft_lstadd_back(&list, ft_lstnew(strdup("world")));
-//	ft_lstadd_back(&list, ft_lstnew(strdup("42tokyo")));
-//	new_list = ft_lstmap(list, f_uppercase, del_str);
-//	printf("Original list:\n");
-//	tmp = list;
-//	while (tmp)
-//	{
-//		printf("%s\n", (char *)tmp->content);
-//		tmp = tmp->next;
-//	}
-//	printf("\nMapped list:\n");
-//	tmp = new_list;
-//	while (tmp)
-//	{
-//		printf("%s\n", (char *)tmp->content);
-//		tmp = tmp->next;
-//	}
-//	ft_lstclear(&list, del_str);
-//	ft_lstclear(&new_list, del_str);
-//	return (0);
+//	lst = NULL;
+//	ft_lstadd_back(&lst, ft_lstnew(strdup("hello")));
+//	new_lst = ft_lstmap(lst, f_uppercase, del_str);
+//	printf("list = %s\n", (char *)lst->content);
+//	printf("new_list = %s\n", (char *)new_lst->content);
 //}
