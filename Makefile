@@ -54,14 +54,17 @@ OBJS = $(SRCS:.c=.o)
 
 B_OBJS = $(B_SRCS:.c=.o)
 
+ifdef WITH_BONUS
+OBJS += $(B_OBJS)
+endif
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-bonus:	$(OBJS) $(B_OBJS)
-	ar rcs $(NAME) $(OBJS) $(B_OBJS)
-	ranlib $(NAME)
+bonus:
+	make WITH_BONUS=1
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I $(INCDIR) -c $< -o $@
