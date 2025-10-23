@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:16:29 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 18:07:37 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/23 21:14:21 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		dest2[i] = src2[i];
 		i++;
 	}
-	return ((void *)dest);
+	return (dest);
 }
 
 // #include <stdio.h>

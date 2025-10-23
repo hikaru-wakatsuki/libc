@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 07:29:15 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 17:09:05 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/23 21:19:30 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	{
 		ub[(i++)] = uc;
 	}
-	return (ub);
+	return (b);
 }
 
 // #include <stdio.h>

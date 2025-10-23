@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 22:00:13 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/17 17:58:21 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/23 21:13:33 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (*str == uc)
-			return (str);
+			return ((void *)str);
 		str++;
 		i++;
 	}

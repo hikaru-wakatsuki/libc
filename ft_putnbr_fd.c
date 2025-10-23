@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 22:45:32 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/20 02:01:38 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/23 21:14:48 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;
 
-	nb = n;
+	nb = (long)n;
 	if (nb < 0)
 	{
 		ft_putchar_fd('-', fd);

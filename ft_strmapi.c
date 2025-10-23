@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 14:41:17 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/19 21:36:50 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/23 21:09:38 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	index;
 	size_t			s_len;
 
-	s_len = strlen(s);
+	s_len = ft_strlen(s);
 	map = (char *)malloc(sizeof(char) * (s_len + 1));
 	if (!map)
 		return (NULL);
