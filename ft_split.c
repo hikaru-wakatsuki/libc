@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:14:31 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/19 16:09:46 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/25 11:39:58 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,8 @@ static bool	insert_word(char const *s, char **to_split, size_t to_index,
 	to_split[to_index] = ft_strndup(s - n, n);
 	if (!(to_split[to_index]))
 	{
-		while (to_index > 0)
-			free(to_split[(to_index--)]);
-		free(to_split[(to_index)]);
+		while (to_index--)
+			free(to_split[(to_index)]);
 		free(to_split);
 		return (false);
 	}

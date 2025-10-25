@@ -6,7 +6,7 @@
 /*   By: hwakatsu <hwakatsu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 20:43:29 by hwakatsu          #+#    #+#             */
-/*   Updated: 2025/10/20 18:45:10 by hwakatsu         ###   ########.fr       */
+/*   Updated: 2025/10/25 11:39:21 by hwakatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_atoi(const char *nptr)
 	while ('0' <= *nptr && *nptr <= '9')
 	{
 		nbr *= 10;
-		nbr += (long)*nptr - '0';
+		nbr += (long)(*nptr - '0');
 		nptr++;
 	}
 	return ((int)(sign * nbr));
